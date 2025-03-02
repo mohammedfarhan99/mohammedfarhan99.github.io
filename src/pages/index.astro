@@ -1,4 +1,7 @@
 ---
+import './src/styles/global.css';
+import NavBar from '../components/navbar.astro'
+import BlogLinks from '../contants/blogLinks'
 
 ---
 
@@ -11,9 +14,8 @@
 		<title>Farhan's blogs</title>
 	</head>
 	<body>
-	<a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+	
+	<NavBar buttonContent={BlogLinks}/>
 		<h1>Farhan's blogs</h1>
 	</body>
 </html>

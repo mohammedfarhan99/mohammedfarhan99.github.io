@@ -1,5 +1,7 @@
 ---
-
+import Navbar from '../components/navbar.astro'
+import blogLinks from '../contants/blogLinks'
+import './src/styles/global.css'
 ---
 
 <html lang="en">
@@ -11,9 +13,7 @@
 		<title>Farhan's blogs</title>
 	</head>
 	<body>
-   <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+		<Navbar buttonContent={blogLinks}/>
 		<h1>Hello this is Farhan</h1>
 
         <p>You are now reading blogs created by farhan</p>

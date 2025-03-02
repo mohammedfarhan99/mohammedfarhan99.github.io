@@ -1,0 +1,52 @@
+---
+import './src/styles/global.css';
+
+interface buttonContentType{
+    link: string;
+    label: string;
+}
+interface Props {
+    buttonContent: buttonContentType[];
+}
+
+//Get props for displaying buttons in navbar
+//It should be an array of objects where each element is
+/**
+* {
+*   link: '<path>'
+*   label: name of the button
+* }
+**/
+const {buttonContent} = Astro.props;
+
+//Highlight the button if the user has navigated to it
+//Fetch from path
+const pathname = new URL(Astro.request.url).pathname
+
+//Styles which denote what button is selected
+const selectedStyles = ` md:text-blue-700 md:dark:text-blue-500`
+---
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap justify-between  p-4">
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            {buttonContent.map(({label,link}) =>(
+                 <li>
+                    <a 
+                        href={link} 
+                        class={
+                            "block py-2 px-3 text-black bg-blue-700 rounded-sm md:bg-transparent  md:p-0 dark:text-white".concat(
+                                link === pathname ? selectedStyles: ''
+                            )
+                        }
+                        aria-current="page">
+                            {label}
+                    </a>
+                </li>
+            ))}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
