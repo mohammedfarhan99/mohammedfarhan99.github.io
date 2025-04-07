@@ -1,0 +1,21 @@
+---
+import Navbar from '../components/navbar.astro'
+import blogLinks from '../contants/blogLinks'
+import '../styles/global.css'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Farhan's blogs</title>
+	</head>
+	<body>
+		<Navbar buttonContent={blogLinks}/>
+		<h1>Hello this is Farhan</h1>
+
+        <p>You are now reading blogs created by farhan</p>
+	</body>
+</html>
