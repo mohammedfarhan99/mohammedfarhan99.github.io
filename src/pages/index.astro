@@ -1,27 +1,23 @@
 ---
-import '../styles/global.css';
-import NavBar from '../components/navbar.astro'
-import BlogLinks from '../contants/blogLinks'
-
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Hero from "@/components/Hero.astro";
+import WhatIDo from "@/components/WhatIDo.astro";
 ---
 
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Farhan's blogs</title>
-	</head>
-	<body>
-	
-	<NavBar buttonContent={BlogLinks}/>
-
-		<h1>Farhan's blogs</h1>
-
-		<li>
-
-			<a href="/posts/helloworld">Hello World</a>
-		</li>
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="p-0 m-0 max-w-screen">
+    <Header />
+    <main class="container mx-auto md:px-10">
+      <Hero />
+      <WhatIDo />
+    </main>
+    <Footer />
+  </body>
 </html>
