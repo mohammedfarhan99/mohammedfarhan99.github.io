@@ -12,5 +12,4 @@ export default defineConfig({
   output:'server',
   integrations: [mdx(), sitemap(), tailwind(), icon()],
   site:'https://mohammedfarhan99.github.io/',
-  vite:{server:{allowedHosts: ['836a-122-162-169-128.ngrok-free.app']}}
 });
