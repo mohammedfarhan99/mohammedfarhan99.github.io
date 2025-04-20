@@ -9,8 +9,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  output:'server',
+  // output:'server',
   integrations: [mdx(), sitemap(), tailwind(), icon()],
-  site:'https://mohammedfarhan99.github.io/',
-  base:'https://github.com/mohammedfarhan99/mohammedfarhan99.github.io'
+  site:'https://mohammedfarhan99.github.io',
 });
