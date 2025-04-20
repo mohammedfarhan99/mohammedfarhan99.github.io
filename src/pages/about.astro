@@ -1,21 +1,38 @@
 ---
-import Navbar from '../components/navbar.astro'
-import blogLinks from '../contants/blogLinks'
-import '../styles/global.css'
+import Layout from '@/layouts/BlogPost.astro';
+const tags = ['astro', 'react', 'svelte', 'vue', 'web-components'];
+const description = `
+  <p class="text-left">
+    Foto de <a
+      href="https://unsplash.com/es/@francescobiancoo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+      >Francesco Bianco</a
+    > en <a
+      class=" text-pgreen font-bold"
+      href="https://unsplash.com/es/fotos/arte-mural-floral-dorado-y-azul-TVsgRyKJDc0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+      >Unsplash</a
+    >
+  </p>
+`;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Farhan's blogs</title>
-	</head>
-	<body>
-		<Navbar buttonContent={blogLinks}/>
-		<h1>Hello this is Farhan</h1>
+<Layout
+	tags={tags}
+	icon="beach"
+	title="About Me"
+	description= {description}
+	pubDate={new Date('20 April 2025')}
+	heroImage="/src/assets/fran.jpg"
+>
+	<p>
+		Currently I work @ Engineering in Taghash. I like the journey solving problems because it gives me insight as to how things work 
+		and predict how they are supposed to. I'm interested in reading across various genres and topics. While I don't have specific preferences, I particularly enjoy engaging stories that capture my attention.
+	</p>
 
-        <p>You are now reading blogs created by farhan</p>
-	</body>
-</html>
+	<p>
+		Throughout this blog I want to share with you what I'm intrested in, be it; my journey of solving a particular problem, something I'm intrested in etc.
+		Feedback/thoughts about what I've shared are always welcome.
+		Feel free to connect with me :)
+	</p>
+
+	
+</Layout>

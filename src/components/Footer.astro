@@ -1,0 +1,28 @@
+---
+const today = new Date();
+import { Icon } from "astro-icon/components";
+---
+
+<footer
+  class="flex flex-col items-center container mx-auto p-10 text-center gap-10 pb-40"
+>
+  &copy; {today.getFullYear()} Mohammed Farhan. All rights reserved.
+  <div class="flex items-center gap-6 text-5xl">
+
+    <a
+      href="https://github.com/mohammedfarhan99"
+      target="_blank"
+      class="border-1 p-1 border-black rounded-full bg-pblue shadow-card hover:shadow-hover transition"
+    >
+      <Icon name="github" />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/mohammed-farhan-3608b1243/"
+      target="_blank"
+      class="border-1 p-1 border-black rounded-full bg-pgreen shadow-card hover:shadow-hover transition"
+    >
+      <Icon name="linkedin" />
+    </a>
+  </div>
+ 
+</footer>
