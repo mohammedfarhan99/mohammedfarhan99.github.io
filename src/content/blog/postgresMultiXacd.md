@@ -20,7 +20,7 @@ This error in a nuteshell means that the database is expecting a lock on a row h
 More details on the [problem](https://medium.com/in-the-weeds/postgresql-multixactid-error-in-vacuum-106af8fbf022)
 ### **Debugging**
 Usually the solutions to this include locating the courrpted row,deleting it and vaccuming the table.
-But in my case these solutions would not work which usually points towards the last resort in any data corruption, which is retore the data. 
+But in my case these solutions would not work which usually points towards the last resort in any data corruption, which is to restore the data. 
 But in my case I did not want to restore the data from scratch as I had some pending work in my databse.
 ## **The Solution**
 Instead of restoring the whole db from scratch, I wanted to restore the contents of the affected table only so off I went to explore this. Before moving ahead a snapshot of the db or of the table would help,
