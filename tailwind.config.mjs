@@ -3,6 +3,13 @@ export default {
   darkMode: "class",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    typography:{
+      DEFAULT:{
+        css:{
+          maxWidth: '150ch'
+        }
+      }
+    },
     extend: {
       boxShadow: {
         card1: "2px 2px #000000",

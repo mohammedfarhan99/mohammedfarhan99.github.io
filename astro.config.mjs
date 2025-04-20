@@ -6,11 +6,11 @@ import tailwind from "@astrojs/tailwind";
 
 import icon from "astro-icon";
 
-import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
   output:'server',
   integrations: [mdx(), sitemap(), tailwind(), icon()],
-  adapter: netlify(),
+  site:'https://mohammedfarhan99.github.io/',
+  vite:{server:{allowedHosts: ['836a-122-162-169-128.ngrok-free.app']}}
 });
