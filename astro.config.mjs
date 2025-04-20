@@ -11,5 +11,5 @@ import icon from "astro-icon";
 export default defineConfig({
   // output:'server',
   integrations: [mdx(), sitemap(), tailwind(), icon()],
-  site:'https://mohammedfarhan99.github.io/',
+  site:'https://mohammedfarhan99.github.io',
 });
