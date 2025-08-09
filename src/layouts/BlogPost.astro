@@ -36,24 +36,29 @@ if (!images[heroImage]) throw new Error(`"${heroImage}" does not exist in glob: 
 const getRandomClass = () => {
   return bgClasses[Math.floor(Math.random() * bgClasses.length)];
 };
+
+console.log({propsToImage:{
+  img: images[heroImage],
+  title
+}});
+
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body>
+  <body>  ``
     <Header />
     <main class="container mx-auto md:px-10 text-white">
       <article >
         <div class="relative mb-20" transition:animate="fade">
           <span class="bg-black bg-opacity-25 w-full h-full absolute"></span>
           <div class="absolute bottom-10 md:left-20 left-6">
-            <h1 class="text-4xl md:text-9xl font-semibold text-shadow">
-              <span class="font-kablamo text-ppink">{title.charAt(0)}</span>{
-                title.slice(1)
-              }
-            </h1>
+          
+            <h1 class={`text-4xl ${title.length > 33 ? 'md:text-8xl' : 'md:text-9xl'} font-semibold text-shadow`}>
+  <span class="font-kablamo text-ppink">{title.charAt(0)}</span>{title.slice(1)}
+</h1>
             <p  set:html={description} />
           </div>
           <Image src={images[heroImage]()}  alt={title} class="h-96 w-full object-cover"/>
